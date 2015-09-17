@@ -1,6 +1,6 @@
 <?php
 
-namespace mkdo\members;
+namespace mkdo\dashboard_user_lockout;
 
 /**
  * Class AccessController
@@ -22,7 +22,7 @@ class AccessController {
 
 	public function access_control() {
 		if( is_admin() ) {
-			$restricted_roles = get_option( 'mm_admin_restrict', array() );
+			$restricted_roles = get_option( 'dul_admin_restrict', array() );
 			$current_user     = wp_get_current_user();
 			$roles            = $current_user->roles;
 

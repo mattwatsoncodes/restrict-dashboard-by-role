@@ -1,6 +1,6 @@
 <?php
 
-namespace mkdo\members;
+namespace mkdo\dashboard_user_lockout;
 
 /**
  * Class MainController
@@ -16,7 +16,7 @@ class MainController {
 	function __construct( Options $options, AccessController $access_controller ) {
 
 		$this->plugin_path  = plugin_dir_path( __FILE__ );
-		$this->text_domain = 'mkdo-members';
+		$this->text_domain = 'dashboard-user-lockout';
 
 		$this->options = $options;
 		$this->access_controller = $access_controller;

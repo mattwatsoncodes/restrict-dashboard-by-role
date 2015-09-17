@@ -45,7 +45,7 @@ msgid "MKDO Members"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-msgid "https://github.com/mkdo/mkdo-members"
+msgid "https://github.com/mkdo/dashboard-user-lockout"
 msgstr ""
 
 #. Description of the plugin/theme

@@ -1,6 +1,6 @@
 <?php
 
-namespace mkdo\members;
+namespace mkdo\dashboard_user_lockout;
 
 /**
  * Class LoginErrors
@@ -18,7 +18,7 @@ class LoginErrors {
 	public function error_insufficient_permissions() {
 		if( isset( $_GET['error'] ) && $_GET['error'] == 'insufficient-permissions' ) {
 
-			$error   = get_option( 'mm_admin_restrict_message' );
+			$error   = get_option( 'dul_admin_restrict_message' );
 
 			$message = '';
 			$message .= '<p class="message">';
