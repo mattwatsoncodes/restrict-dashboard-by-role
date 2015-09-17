@@ -21,5 +21,5 @@ The plugin provides the following functionality:
 
 ## Changelog
 
-**1.0.0** - *17.09.2015* - First stable release.
-**1.0.1** - *17.09.2015* - Updated POT File, and cleaned up legacy references.
+**1.0.1** - *17.09.2015* - Updated POT File, and cleaned up legacy references. 
+**1.0.0** - *17.09.2015* - First stable release. 
