@@ -1,6 +1,6 @@
 # Dashboard User Lockout
 
-Stop certain users accessing the WordPress Admin Screen (WP Admin) by their User Role.
+Restrict users with certain User Roles from accessing the WordPress Dashboard (WP Admin).
 
 ## About
 
