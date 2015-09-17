@@ -8,8 +8,9 @@ If you have a WordPress website with multiple users and several User Roles defin
 
 The plugin provides the following functionality:
 
-* An options screen that lets you:
+* An options screen, that lets you:
  * Restrict Access to the WordPress Admin Screen (WP Admin) for one or more User Roles.
+ * Choose how to handle the restriction for users with multiple roles
  * Provide a custom message to restricted users
 
 ## Installation
@@ -21,6 +22,7 @@ The plugin provides the following functionality:
 
 ## Changelog
 
+**1.1.0** - *17.09.2015* - Added ability to choose how to handle restrictions for users with multiple roles.  
 **1.0.2** - *17.09.2015* - Corrected options page path.  
 **1.0.1** - *17.09.2015* - Updated POT File, and cleaned up legacy references.  
 **1.0.0** - *17.09.2015* - First stable release.  
