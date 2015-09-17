@@ -8,7 +8,7 @@
  * @wordpress-plugin
  * Plugin Name:       Dashboard User Lockout
  * Plugin URI:        https://github.com/mkdo/dashboard-user-lockout
- * Description:       Stop certain users accessing the WordPress Admin Screen (WP Admin) by their User Role.
+ * Description:       Restrict users with certain User Roles from accessing the WordPress Dashboard (WP Admin).
  * Version:           1.1.0
  * Author:            Make Do <hello@makedo.in>
  * Author URI:        http://www.makedo.in
