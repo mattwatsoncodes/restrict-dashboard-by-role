@@ -21,20 +21,19 @@ class AccessController {
 	}
 
 	public function access_control() {
-		if( is_admin() ) {
-			$restricted_roles = get_option( 'dul_admin_restrict', array() );
-			$current_user     = wp_get_current_user();
-			$roles            = $current_user->roles;
 
-			foreach( $roles as $key => $role ) {
-				if( in_array( $role, $restricted_roles ) ) {
+		$restricted_roles = get_option( 'dul_admin_restrict', array() );
+		$current_user     = wp_get_current_user();
+		$roles            = $current_user->roles;
 
-					$redirect_url = wp_login_url ('', false );
+		foreach( $roles as $key => $role ) {
+			if( in_array( $role, $restricted_roles ) ) {
 
-					wp_logout();
-					wp_safe_redirect( $redirect_url . '?error="insufficient-permissions"' );
-					exit;
-				}
+				$redirect_url = wp_login_url ('', false );
+
+				wp_logout();
+				wp_safe_redirect( $redirect_url . '?error="insufficient-permissions"' );
+				exit;
 			}
 		}
 	}

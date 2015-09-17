@@ -35,7 +35,7 @@ class Options {
 	 * Add the options page
 	 */
 	public function add_options_page() {
-		add_submenu_page( 'options-general.php', __( 'Dashboard User Lockout', 'dashboard-user-lockout' ), __( 'Dashboard User Lockout', 'dashboard-user-lockout' ), 'manage_options', 'mkdo_members', array( $this, 'render_options_page' ), 'dashicons-groups' );
+		add_submenu_page( 'options-general.php', __( 'Dashboard User Lockout', 'dashboard-user-lockout' ), __( 'Dashboard User Lockout', 'dashboard-user-lockout' ), 'manage_options', 'dashboard_user_lockout', array( $this, 'render_options_page' ) );
 	}
 
 	/**
