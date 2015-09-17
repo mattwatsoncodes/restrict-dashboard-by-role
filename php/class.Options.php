@@ -4,7 +4,7 @@ namespace mkdo\dashboard_user_lockout;
 
 /**
  * Class Options
- * @package mkdo\members
+ * @package mkdo\dashboard_user_lockout
  */
 class Options {
 

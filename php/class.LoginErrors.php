@@ -4,7 +4,7 @@ namespace mkdo\dashboard_user_lockout;
 
 /**
  * Class LoginErrors
- * @package mkdo\members
+ * @package mkdo\dashboard_user_lockout
  */
 class LoginErrors {
 
