@@ -41,7 +41,7 @@ class AccessController {
 					exit;
 				}
 			}
-		} else if( $restricted_multiple == 'all' ) {
+		} else if( $restricted_multiple == 'all' && ( ! defined( 'DOING_AJAX' ) || ! DOING_AJAX ) ) {
 			if( count( array_intersect( $roles, $restricted_roles ) ) == count( $roles ) ) {
 
 				wp_logout();
