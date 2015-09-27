@@ -22,6 +22,7 @@ The plugin provides the following functionality:
 
 ## Changelog
 
+**1.2.0** - *27.09.2015* - Stopped the plugin blocking AJAX calls
 **1.1.0** - *17.09.2015* - Added ability to choose how to handle restrictions for users with multiple roles.  
 **1.0.2** - *17.09.2015* - Corrected options page path.  
 **1.0.1** - *17.09.2015* - Updated POT File, and cleaned up legacy references.  
