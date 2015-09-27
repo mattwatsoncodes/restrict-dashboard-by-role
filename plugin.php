@@ -2,7 +2,7 @@
 
 /**
  * @link              https://github.com/mkdo/dashboard-user-lockout
- * @since             1.1.0
+ * @since             1.2.0
  * @package           mkdo\dashboard_user_lockout
  *
  * @wordpress-plugin
