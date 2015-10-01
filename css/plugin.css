@@ -1,0 +1,41 @@
+/* Options */
+
+.settings_page_restrict_dashboard_by_role .field {
+	margin-bottom: 30px;
+	display: block;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #dfdfdf;
+}
+
+.settings_page_restrict_dashboard_by_role .field:last-child {
+	border: none;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+
+.settings_page_restrict_dashboard_by_role .field-title {
+	font-weight: bold;
+}
+.settings_page_restrict_dashboard_by_role .field-description {
+	color: #aaa;
+	font-style: italic;
+	max-width: 800px;
+}
+
+.settings_page_restrict_dashboard_by_role #mkdo_rdbr_admin_restrict_message {
+	width: 100%;
+	max-width: 800px;
+	height: 80px;
+}
+
+.settings_page_restrict_dashboard_by_role #mkdo_rdbr_default_redirect {
+	width: 100%;
+	max-width: 800px;
+}
+
+.settings_page_restrict_dashboard_by_role .warning {
+	background-color:red;
+	color:white;
+	padding: 0 2px 0 2px;
+	font-weight: normal;
+}
