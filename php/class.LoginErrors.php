@@ -14,7 +14,7 @@ class LoginErrors {
 
 	// Do Work
 	public function run() {
-		add_action( 'login_message', array( $this, 'error_insufficient_permissions' ) );
+		add_action( 'login_message', array( $this, 'error_insufficient_permissions' ), 99 );
 	}
 
 	/**
