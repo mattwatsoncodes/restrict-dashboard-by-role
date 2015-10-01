@@ -19,10 +19,11 @@ The plugin provides the following functionality:
 1. Download this repository and unzip it into the folder `restrict-dashboard-by-role`
 2. Upload the `restrict-dashboard-by-role` folder to the `/wp-content/plugins/` directory
 3. Activate the plugin through the 'Plugins' menu in WordPress
-4. Configure the plugin var the 'Restrict Dashboard by Role' options page under the WordPress 'Settings' Menu
+4. Configure the plugin via the 'Restrict Dashboard by Role' options page under the WordPress 'Settings' Menu
 
 ## Changelog
 
+**2.1.0** - *01.10.2015* - Updated for submission to WordPress plugin repository.  
 **2.0.0** - *01.10.2015* - Code review and refactor.  
 **1.2.0** - *27.09.2015* - Stopped the plugin blocking AJAX calls.  
 **1.1.0** - *17.09.2015* - Added ability to choose how to handle restrictions for users with multiple roles.  
