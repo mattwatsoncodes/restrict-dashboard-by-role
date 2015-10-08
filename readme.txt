@@ -1,4 +1,4 @@
-=== Restrict Content by Role ===
+=== Restrict Dashboard by Role ===
 Contributors: mkdo, mwtsn
 Donate link:
 Tags: restrict, restrict admin, restrict wp-admin, restrict dashboard, lockdown, lockdown admin, lockdown wp-admin, lockdown dashboard, admin, dashboard, wp-admin, lockdown, management, permissions, manage dashboard permissions, manage wp-admin permissions, manage admin permissions, manage wp-admin permissions, manage users, manage roles, users, roles
