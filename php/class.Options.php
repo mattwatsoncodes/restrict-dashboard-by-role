@@ -33,15 +33,17 @@ class Options {
 		register_setting( 'mkdo_rdbr_settings_group', 'mkdo_rdbr_admin_restrict_multiple' );
 		register_setting( 'mkdo_rdbr_settings_group', 'mkdo_rdbr_admin_restrict_message' );
 		register_setting( 'mkdo_rdbr_settings_group', 'mkdo_rdbr_default_redirect' );
+		register_setting( 'mkdo_rdbr_settings_group', 'mkdo_rdbr_force_logout' );
 
 		// Add sections
-		add_settings_section( 'mkdo_rdbr_admin_restrict_section', 'Restrict Access to WP Admin', array( $this, 'mkdo_rdbr_admin_restrict_section_cb' ), 'mkdo_rdbr_settings' );
+		add_settings_section( 'mkdo_rdbr_admin_restrict_section', esc_html__( 'Restrict Access to WP Admin', MKDO_RDBR_TEXT_DOMAIN ), array( $this, 'mkdo_rdbr_admin_restrict_section_cb' ), 'mkdo_rdbr_settings' );
 
     	// Add fields to a section
-		add_settings_field( 'mkdo_rdbr_admin_restrict_user_roles_select', 'Choose User Roles to restrict:', array( $this, 'mkdo_rdbr_admin_restrict_user_roles_select_cb' ), 'mkdo_rdbr_settings', 'mkdo_rdbr_admin_restrict_section' );
-		add_settings_field( 'mkdo_rdbr_admin_restrict_multiple', 'How should we handle users with multiple roles?', array( $this, 'mkdo_rdbr_admin_restrict_multiple_cb' ), 'mkdo_rdbr_settings', 'mkdo_rdbr_admin_restrict_section' );
-		add_settings_field( 'mkdo_rdbr_admin_restrict_message', 'Enter the restriction message:', array( $this, 'mkdo_rdbr_admin_restrict_message_cb' ), 'mkdo_rdbr_settings', 'mkdo_rdbr_admin_restrict_section' );
-		add_settings_field( 'mkdo_rdbr_default_redirect', 'Redirect URL:', array( $this, 'mkdo_rdbr_default_redirect_cb' ), 'mkdo_rdbr_settings', 'mkdo_rdbr_admin_restrict_section' );
+		add_settings_field( 'mkdo_rdbr_admin_restrict_user_roles_select', esc_html__( 'Choose User Roles to restrict:', MKDO_RDBR_TEXT_DOMAIN ), array( $this, 'mkdo_rdbr_admin_restrict_user_roles_select_cb' ), 'mkdo_rdbr_settings', 'mkdo_rdbr_admin_restrict_section' );
+		add_settings_field( 'mkdo_rdbr_admin_restrict_multiple', esc_html__( 'How should we handle users with multiple roles?', MKDO_RDBR_TEXT_DOMAIN ), array( $this, 'mkdo_rdbr_admin_restrict_multiple_cb' ), 'mkdo_rdbr_settings', 'mkdo_rdbr_admin_restrict_section' );
+		add_settings_field( 'mkdo_rdbr_admin_force_logout', esc_html__( 'Should users be forcefully logged out?', MKDO_RDBR_TEXT_DOMAIN ), array( $this, 'mkdo_rdbr_admin_force_logout_cb' ), 'mkdo_rdbr_settings', 'mkdo_rdbr_admin_restrict_section' );
+		add_settings_field( 'mkdo_rdbr_admin_restrict_message', esc_html__( 'Enter the restriction message:', MKDO_RDBR_TEXT_DOMAIN ), array( $this, 'mkdo_rdbr_admin_restrict_message_cb' ), 'mkdo_rdbr_settings', 'mkdo_rdbr_admin_restrict_section' );
+		add_settings_field( 'mkdo_rdbr_default_redirect', esc_html__( 'Redirect URL:', MKDO_RDBR_TEXT_DOMAIN ), array( $this, 'mkdo_rdbr_default_redirect_cb' ), 'mkdo_rdbr_settings', 'mkdo_rdbr_admin_restrict_section' );
 	}
 
 	/**
@@ -81,7 +83,7 @@ class Options {
 					<li>
 						<label>
 							<input type="checkbox" name="mkdo_rdbr_admin_restrict[]" value="<?php echo $key; ?>" <?php if ( in_array( $key, $mkdo_rdbr_admin_restrict ) ) { echo ' checked="checked"'; } ?> />
-							<?php echo $role['name'];?>
+							<?php _e( $role['name'] );?>
 							<?php if( $key == 'administrator' ) {  printf( esc_html__( '%s(See warning - Restrict at own risk)%s', MKDO_RDBR_TEXT_DOMAIN ), '<strong>', '</strong>' ); } ?>
 						</label>
 					</li>
@@ -120,6 +122,33 @@ class Options {
 	}
 
 	/**
+	 * Call back for the admin force logout field
+	 */
+	public function mkdo_rdbr_admin_force_logout_cb() {
+
+		$mkdo_rdbr_force_logout = get_option( 'mkdo_rdbr_force_logout', 'true' );
+
+		?>
+
+		<div class="field field-radio-group field-handle-multiple">
+			<p class="field-description">
+				<?php esc_html_e( 'Choose if users should be forcefully logged out when they are redirected.', MKDO_RDBR_TEXT_DOMAIN );?>
+			</p>
+			<ul class="field-input">
+			<li>
+				<label><input type="radio" name="mkdo_rdbr_force_logout" value="true" <?php checked( 'true', $mkdo_rdbr_force_logout );?>> <?php printf( esc_html__( 'Users are logged out when redirected' , MKDO_RDBR_TEXT_DOMAIN ), '<strong>', '</strong>' );?></label>
+			</li>
+			<li>
+				<label><input type="radio" name="mkdo_rdbr_force_logout" value="false" <?php checked( 'false', $mkdo_rdbr_force_logout );?>> <?php printf( esc_html__( 'Users are not logged out when redirected' , MKDO_RDBR_TEXT_DOMAIN ), '<strong>', '</strong>' );?> </label>
+			</li>
+			</ul
+		</div>
+
+		<?php
+	}
+
+
+	/**
 	 * Call back for the admin restrict user role field
 	 */
 	public function mkdo_rdbr_admin_restrict_message_cb() {
@@ -153,11 +182,11 @@ class Options {
 		<div class="field field-redirect-url">
 			<p class="field-title">
 				<label for="mkdo_rdbr_default_redirect" class="screen-reader-text">
-					<?php esc_html_e( 'Redirect Url', MKDO_RCBR_TEXT_DOMAIN );?>
+					<?php esc_html_e( 'Redirect Url', MKDO_RDBR_TEXT_DOMAIN );?>
 				</label>
 			</p>
 			<p class="field-description">
-				<?php esc_html_e( 'Enter the full URL that you wish to redirect to. (Leave blank to redirect to login screen).', MKDO_RCBR_TEXT_DOMAIN );?>
+				<?php esc_html_e( 'Enter the full URL that you wish to redirect to. (Leave blank to redirect to login screen).', MKDO_RDBR_TEXT_DOMAIN );?>
 			</p>
 			<p class="field-input">
 				<input type="text" name="mkdo_rdbr_default_redirect" id="mkdo_rdbr_default_redirect" placeholder="http://example.com/content/" value="<?php echo $mkdo_rdbr_default_redirect;?>" />

@@ -7,9 +7,9 @@
  * Plugin Name:       Restrict Dashboard by Role
  * Plugin URI:        https://github.com/mkdo/restrict-dashboard-by-role
  * Description:       Restrict users with certain User Roles from accessing the WordPress Dashboard (WP Admin).
- * Version:           2.1.0
- * Author:            Make Do <hello@makedo.in>
- * Author URI:        http://www.makedo.in
+ * Version:           2.1.1
+ * Author:            Make Do <hello@makedo.net>
+ * Author URI:        http://www.makedo.net
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       restrict-dashboard-by-role
