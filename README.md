@@ -2,6 +2,8 @@
 
 Restrict users with certain User Roles from accessing the WordPress Dashboard (WP Admin).
 
+![Restrict Dashboard by Role](https://github.com/mkdo/restrict-dashboard-by-role/blob/master/assets/banner-1544x500.png?raw=true "Restrict Dashboard by Role")
+
 ## About
 
 If you have a WordPress website with multiple users and several User Roles defined, and you wish to prevent certain User Roles from accessing `wp-admin`, then this plugin is for you.
