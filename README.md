@@ -30,4 +30,5 @@ The plugin provides the following functionality:
 **1.2.0** - *27.09.2015* - Stopped the plugin blocking AJAX calls.  
 **2.0.0** - *01.10.2015* - Code review and refactor.  
 **2.1.0** - *01.10.2015* - Updated for submission to WordPress plugin repository.  
-**2.1.1** - *08.08.2016* - Tested with WordPress 4.5, added option to allow forced logout, allowed all AJAX requests through, updated translations.   
+**2.1.1** - *08.08.2016* - Tested with WordPress 4.5, added option to allow forced logout, allowed all AJAX requests through, updated translations.  
+**2.1.2** - *17.03.2017* - Added new artwork 
